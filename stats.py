@@ -1,4 +1,12 @@
 import matplotlib.pyplot as plt
+import statistics
+
+def median(ls):
+    if len(ls) % 2 == 0:
+        return (ls[len(ls)/2] + ls[(len(ls)/2)+1])/2
+    else:
+        return (ls[len(ls)//2])
+    
 
 fhand = open('StudentExercise.csv')
 
@@ -12,7 +20,18 @@ for line in fhand:
 
 plot_data.sort()
 #print(plot_data)
-plt.hist(plot_data,bins = 10)
-plt.show()
+#plt.hist(plot_data,bins = 10)
+#plt.show()
 
-    
+average = statistics.mean(plot_data)
+print(average)
+
+count = 0
+for element in plot_data:
+    if element > average:
+        count+=1
+
+prop_stud = count/len(plot_data)
+print(prop_stud)
+
+median(prop_stud)    
