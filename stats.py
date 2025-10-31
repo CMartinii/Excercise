@@ -19,13 +19,15 @@ for line in fhand:
         plot_data.append(float(num1))
 
 plot_data.sort()
-#print(plot_data)
-#plt.hist(plot_data,bins = 10)
-#plt.show()
+plt.hist(plot_data,bins = 10)
+plt.show()
 
+#########a###########
 average = statistics.mean(plot_data)
 print(average)
 
+
+#########b###########
 count = 0
 for element in plot_data:
     if element > average:
@@ -34,4 +36,7 @@ for element in plot_data:
 prop_stud = count/len(plot_data)
 print(prop_stud)
 
-median(prop_stud)    
+
+#########c###########
+print(median(plot_data))
+
